@@ -1,0 +1,161 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.menu {
+    display: flex;
+    /* Membuat menu menjadi flex */
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+/* Menggunakan img-fluid untuk gambar */
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    max-height: 300px;
+}
+
+
+/* Posisi konten di tengah gambar */
+
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.centered-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.product-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: #0056b3;
+}
+
+
+/*daftar produk*/
+
+.product-list {
+    text-align: center;
+    padding: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    margin: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px;
+    /* Atur lebar produk */
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+}
+
+.product-item p {
+    padding: 0 10px 10px;
+}
+
+
+/*logo*/
+
+.logo {
+    width: 150px;
+    /* Atur lebar logo sesuai kebutuhan */
+    height: auto;
+    /* Memastikan proporsi tetap terjaga */
+}
+
+
+/*login*/
+
+.login-container {
+    margin-left: auto;
+    /* Menggeser login ke kanan */
+}
+
+.login-button {
+    color: white;
+    /* Warna teks tombol */
+    background-color: #007bff;
+    /* Warna latar belakang biru */
+    text-decoration: none;
+    /* Menghilangkan garis bawah */
+    padding: 6px 11px;
+    /* Ruang di sekitar teks */
+    border-radius: 5px;
+    /* Membuat sudut tombol melengkung */
+    transition: background-color 0.3s;
+    /* Efek transisi saat hover */
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    /* Warna latar belakang saat hover */
+}
+
+#foot {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
