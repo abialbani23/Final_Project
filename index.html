@@ -12,21 +12,27 @@
 </head>
 
 <body>
-    <!-- Navbar -->
+   <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
         </a>
-        <div class="menu-container">
-            <div class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="menu-container">
+                <div class="menu">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="#">Contact</a>
+                </div>
+                <div class="login-container">
+                    <a href="#" class="btn btn-primary login-button">Login</a>
+                </div>
             </div>
-            <div class="login-container">
-                <a href="#" class="login-button">Login</a>
-            </div </div>
+        </div>
     </nav>
     
     <!-- Body -->
@@ -42,6 +48,7 @@
             <a href="#produk" class="product-button">Daftar Produk Saya</a>
         </div>
     </div>
+    
     <!--daftar produk-->
     <div id="produk" class="product-list">
         <h2>Daftar Produk Kami</h2>
@@ -90,6 +97,7 @@
     <footer id="foot">
         <p>&copy; 2023 OTO TRACK. All Rights Reserved.</p>
     </footer>
+    
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
