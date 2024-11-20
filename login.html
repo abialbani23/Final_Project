@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registration</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('mobil jajar.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 400px; /* Membatasi lebar maksimal */
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px; /* Menambahkan sudut membulat */
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+        }
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                max-width: 90%;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OTO Track</h1>
+    </header>
+    <main>
+        <div class="container">
+            <img src="oto track.png" alt="Oto Track" style="width: 100px; height: auto;">
+            <form id="loginForm" onsubmit="return loginUser ()">
+                <div class="error-message" id="errorMessage"></div>
+                <input placeholder="Username" required type="text" id="username" aria-label="Username" />
+                <input placeholder="Password" required type="password" id="password" aria-label="Password" />
+                <button type="submit">Sign in</button>
+            </form>
+            <p>Selamat Datang</p>
+            <p>Belum punya akun? <a href="#" onclick="toggleRegistration()" style="color: #6c63ff; text-decoration: none;">Registrasi</a></p>
+        </div>
+
+        <div class="footer">
+            <p>2023 OTO TRACK. All Rights Reserved.</p>
+        </div>
+
+        <div class="registration-container" style="display:none;">
+            <div class="container">
+                <h2>Registrasi</h2>
+                <form id="registrationForm" onsubmit="return registerUser ()">
+                    <div class="error-message" id="registrationErrorMessage"></div>
+                    <input placeholder="Username" required type="text" id="regUsername" aria-label="Username" />
+                    <input placeholder="Password (min 8 characters)" required type="password" id="regPassword" aria-label="Password" />
+                    <input placeholder="Phone Number (min 11 digits)" required type="tel" id="regPhone" aria-label="Phone Number" />
+                    <input placeholder="Email" required type="email" id="regEmail" aria-label="Email" />
+                    <button type="submit">Daftar</button>
+                </form>
+                <p>Sudah punya akun? <a href="#" onclick="toggleRegistration ()" style="color: #6c63ff; text-decoration: none;">Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let users = {};
+        let emails = {};
+
+        function toggleRegistration() {
+            const loginContainer = document.querySelector('.container');
+            const registrationContainer = document.querySelector('.registration-container');
+            // Reset error messages
+            document.getElementById('errorMessage').textContent = '';
+            document.getElementById('registrationErrorMessage').textContent = '';
+            
+            // Toggle visibility
+            loginContainer.style.display = loginContainer.style.display === 'none' ? 'block' : 'none';
+            registrationContainer.style.display = registrationContainer.style.display === 'none' ? 'block' : 'none';
+
+            // Reset registration form
+            if (registrationContainer.style.display === 'none') {
+                document.getElementById('registrationForm').reset();
+            }
+        }
+
+        function registerUser  () {
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            const phone = document.getElementById('regPhone').value;
+            const email = document.getElementById('regEmail').value;
+            const registrationErrorMessage = document.getElementById('registrationErrorMessage');
+
+            // Validate username uniqueness
+            if (users[username]) {
+                registrationErrorMessage.textContent = 'Username sudah ada.';
+                return false; // Prevent form submission
+            }
+
+            // Validate password length
+            if (password.length < 8) {
+                registrationErrorMessage.textContent = 'Password harus minimal 8 karakter.';
+                return false; // Prevent form submission
+            }
+
+            // Validate phone number length
+            if (phone.length < 11) {
+                registrationErrorMessage.textContent = 'Nomor telepon harus minimal 11 digit.';
+                return false; // Prevent form submission
+            }
+
+            // Validate email uniqueness
+            if (emails[email]) {
+                registrationErrorMessage.textContent = 'Email sudah terdaftar.';
+                return false; // Prevent form submission
+            }
+
+            // Register user
+            users[username] = password;
+            emails[email] = true; // Mark email as registered
+            alert('Registrasi berhasil! Silakan login.');
+            toggleRegistration(); // Switch to login form
+            return false; // Prevent form submission
+        }
+
+        function loginUser  () {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (users[username] && users[username] === password) {
+                localStorage.setItem('username', username); // Store username in localStorage
+                alert('Login berhasil!');
+                window.location.href = 'index.html'; // Redirect to index.html
+            } else {
+                errorMessage.textContent = 'Username atau password salah.';
+            }
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
