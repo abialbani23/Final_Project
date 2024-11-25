@@ -7,28 +7,40 @@
     <title>OTO TRACK</title>
     <link rel="icon" type="image/png" href="oto track.png" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
-        </a>
-        <div class="menu-container">
-            <div class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="login-container">
-                <a href="#" class="login-button">Login</a>
-            </div </div>
-    </nav>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <!-- Body -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light">
+        <button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
+        <a class="navbar-brand" href="#">
+            <img src="Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
+        </a>
+        <div class="login-container">
+            <a href="login.html" class="login-button" id="loginButton">Login</a>
+            <div id="userContainer" style="display: none;">
+                <div class="profile-icon" id="profileIcon"></div>
+                <span id="username" style="cursor: pointer;"></span>
+                <a href="#" class="btn btn-danger btn-sm logout-button" id="logoutButton">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+<!-- Body -->
     <div class="image-container">
-        <img src="mobil jajar.jpg" alt="Deskripsi Proyek" class="img-fluid" />
+        <img src="img/mobil jajar.jpg" alt="Deskripsi Proyek" class="img-fluid" />
 
         <!-- Konten di tengah gambar -->
         <div class="centered-content">
@@ -39,54 +51,96 @@
             <a href="#produk" class="product-button">Daftar Produk Saya</a>
         </div>
     </div>
-    <!--daftar produk-->
+    
+    <!-- Daftar produk -->
     <div id="produk" class="product-list">
         <h2>Daftar Produk Kami</h2>
         <div class="product-container">
             <div class="product-item">
-                <img src="avanza.webp" alt="Mobil 1" class="product-image" />
+                <img src="img/avanza.webp" alt="Mobil 1" class="product-image" />
                 <h3>Avanza</h3>
                 <h5>•12 jam: Rp 300.000</h5>
                 <h5>•24 jam: Rp 400.000</h5>
             </div>
             <div class="product-item">
-                <img src="Brio Matic.webp" alt="Mobil 2" class="product-image" />
+                <img src="img/Brio Matic.webp" alt="Mobil 2" class="product-image" />
                 <h3>Brio Matic</h3>
                 <h5>•12 jam: Rp 250.000</h5>
                 <h5>•24 jam: Rp 350.000</h5>
             </div>
             <div class="product-item">
-                <img src="New Agya Matic.webp" alt="Mobil 3" class="product-image" />
+                <img src="img/New Agya Matic.webp" alt="Mobil 3" class="product-image" />
                 <h3>New Agya Matic</h3>
-                <h5>•12 jam: Rp 300.000</h5>
+                <h5> •12 jam: Rp 300.000</h5>
                 <h5>•24 jam: Rp 400.000</h5>
             </div>
             <div class="product-item">
-                <img src="Calya Manual.webp" alt="Mobil 3" class="product-image" />
+                <img src="img/Calya Manual.webp" alt="Mobil 4" class="product-image" />
                 <h3>Calya Manual</h3>
                 <h5>•12 jam: Rp 300.000</h5>
                 <h5>•24 jam: Rp 400.000</h5>
             </div>
             <div class="product-item">
-                <img src="Wuling Almaz Matic.webp" alt="Mobil 3" class="product-image" />
+                <img src="img/Wuling Almaz Matic.webp" alt="Mobil 5" class="product-image" />
                 <h3>Wuling Almaz Matic</h3>
                 <h5>•12 jam: Rp 450.000</h5>
                 <h5>•24 jam: Rp 600.000</h5>
             </div>
             <div class="product-item">
-                <img src="Grandmax.webp" alt="Mobil 3" class="product-image" />
+                <img src="img/Grandmax.webp" alt="Mobil 6" class="product-image" />
                 <h3>Grandmax</h3>
                 <h5>•12 jam: Rp 200.000</h5>
                 <h5>•24 jam: Rp 300.000</h5>
             </div>
-            <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
         </div>
     </div>
 
+        <p>&copy; 2023 OTO TRACK. All Rights Reserved.</p>
     <!-- Footer -->
     <footer id="foot">
-        <p>&copy; 2023 OTO TRACK. All Rights Reserved.</p>
+
+        <a class="whatsapp-button" href="https://wa.me/6281511208316">
+            <i class="fab fa-whatsapp">
+            </i>
+            Hubungi Kami
+           </a>
     </footer>
+    <script>
+        // Menampilkan nama pengguna jika sudah login
+        const usernameDisplay = document.getElementById('username');
+        const profileIcon = document.getElementById('profileIcon');
+        const storedUsername = localStorage.getItem('username');
+
+        if (storedUsername) {
+            const firstLetter = storedUsername.charAt(0).toUpperCase();
+            profileIcon.textContent = firstLetter; // Tampilkan huruf depan
+            usernameDisplay.textContent = storedUsername; // Tampilkan nama pengguna
+            document.getElementById('userContainer').style.display = 'flex'; // Tampilkan kontainer pengguna
+            document.getElementById('loginButton').style.display = 'none'; // Sembunyikan tombol login
+        }
+
+        // Fungsi untuk logout dengan konfirmasi
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            const confirmLogout = confirm("Apa anda ingin log out?");
+            if (confirmLogout) {
+                localStorage.removeItem('username'); // Hapus username dari local storage
+                usernameDisplay.style.display = 'none'; // Sembunyikan nama pengguna
+                profileIcon.textContent = ''; // Hapus huruf depan
+                document.getElementById('loginButton').style.display = 'inline'; // Tampilkan tombol login
+                document.getElementById('logoutButton').style.display = 'none'; // Sembunyikan tombol logout
+            }
+        });
+
+        // Fungsi untuk toggle sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px"; // Sembunyikan sidebar
+            } else {
+                sidebar.style.left = "0px"; // Tampilkan sidebar
+            }
+        }
+    </script>
 </body>
 
 </html>
