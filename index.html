@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OTO TRACK</title>
-    <link rel="icon" type="image/png" href="oto track.png" />
+    <link rel="icon" type="image/png" href="img/oto track.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -20,21 +20,26 @@
         <a class="navbar-brand" href="#">
             <img src="img/Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
         </a>
-        <div class="menu-container">
-            <div class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
+        <div class="login-container">
+            <a href="login.html" class="login-button" id="loginButton">Login</a>
+            <div id="userContainer" style="display: none;">
+                <div class="profile-icon" id="profileIcon"></div>
+                <span id="username" style="cursor: pointer;"></span>
+                <a href="#" class="btn btn-danger btn-sm logout-button" id="logoutButton">Logout</a>
             </div>
-            <div class="login-container">
-                <a href="#" class="login-button">Login</a>
-            </div </div>
+        </div>
     </nav>
-</head>
 
-<body>
-    <!-- Body -->
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+<!-- Body -->
     <div class="image-container">
         <img src="img/mobil jajar.jpg" alt="Deskripsi Proyek" class="img-fluid" />
 
@@ -92,6 +97,7 @@
     </div>
 
         <p>&copy; 2023 OTO TRACK. All Rights Reserved.</p>
+
     <!-- Footer -->
     <footer id="foot">
 
