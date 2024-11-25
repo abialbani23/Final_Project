@@ -1,15 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "oto_track";
+$host = 'localhost'; // Sesuaikan dengan host Anda
+$dbname = 'reservasi_studio'; // Nama database
+$username = 'root'; // Username database
+$password = ''; // Password database
+$port = '3306';
 
-// Membuat koneksi
-$conn = mysqli_connect ```php
-($servername, $username, $password, $dbname);
-
-// Memeriksa koneksi
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+try {
+  $pdo = new PDO("mysql:host=$host;dbname=$dbname;port=$port", $username, $password);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+  die("Koneksi gagal: " . $e->getMessage());
 }
-?>
