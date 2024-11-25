@@ -1,7 +1,5 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 10px 20px;
 }
 
 .navbar-brand {
@@ -18,13 +16,15 @@
 
 .menu {
     display: flex;
-    /* Membuat menu menjadi flex */
 }
 
-.menu a {
-    color: black;
-    text-decoration: none;
-    padding: 10px 15px;
+.nav-link {
+    margin-right: 15px;
+    color: #007bff;
+}
+
+.nav-link:hover {
+    color: #0056b3;
 }
 
 .image-container {
@@ -33,9 +33,6 @@
     color: white;
 }
 
-
-/* Menggunakan img-fluid untuk gambar */
-
 .image-container img {
     width: 100%;
     height: auto;
@@ -43,20 +40,12 @@
     max-height: 300px;
 }
 
-
-/* Posisi konten di tengah gambar */
-
 .centered-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-}
-
-.centered-content h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
 }
 
 .product-button {
@@ -75,9 +64,6 @@
     background-color: #0056b3;
 }
 
-
-/*daftar produk*/
-
 .product-list {
     text-align: center;
     padding: 20px;
@@ -95,7 +81,6 @@
     border-radius: 5px;
     overflow: hidden;
     width: 300px;
-    /* Atur lebar produk */
 }
 
 .product-image {
@@ -111,42 +96,26 @@
     padding: 0 10px 10px;
 }
 
-
-/*logo*/
-
 .logo {
     width: 150px;
-    /* Atur lebar logo sesuai kebutuhan */
     height: auto;
-    /* Memastikan proporsi tetap terjaga */
 }
-
-
-/*login*/
 
 .login-container {
     margin-left: auto;
-    /* Menggeser login ke kanan */
 }
 
 .login-button {
     color: white;
-    /* Warna teks tombol */
     background-color: #007bff;
-    /* Warna latar belakang biru */
     text-decoration: none;
-    /* Menghilangkan garis bawah */
     padding: 6px 11px;
-    /* Ruang di sekitar teks */
     border-radius: 5px;
-    /* Membuat sudut tombol melengkung */
     transition: background-color 0.3s;
-    /* Efek transisi saat hover */
 }
 
 .login-button:hover {
     background-color: #0056b3;
-    /* Warna latar belakang saat hover */
 }
 
 #foot {
@@ -158,4 +127,40 @@
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px; /* Lebar sidebar */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Menyembunyikan sidebar di luar layar */
+    background-color: #f8f9fa; /* Warna latar belakang */
+    overflow-x: hidden;
+    transition: 0.5s; /* Animasi untuk transisi */
+    padding-top: 60px; /* Jarak dari atas */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Bayangan */
+    z-index: 1; /* Pastikan sidebar berada di atas konten */
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #ddd; /* Warna latar belakang saat hover */
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #f8f9fa; /* Warna tombol */
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
 }
