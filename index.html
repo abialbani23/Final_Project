@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OTO TRACK</title>
     <link rel="icon" type="image/png" href="img/oto track.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -17,11 +17,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light">
         <button class="openbtn" onclick="toggleSidebar()">☰ Menu</button>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <img src="img/Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
         </a>
         <div class="login-container">
-            <a href="login.html" class="login-button" id="loginButton">Login</a>
+            <a href="auth/login.php" class="login-button" id="loginButton">Login</a>
             <div id="userContainer" style="display: none;">
                 <div class="profile-icon" id="profileIcon"></div>
                 <span id="username" style="cursor: pointer;"></span>
@@ -33,13 +33,14 @@
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
         <a href="about/about.php">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="user/search.php">Search</a>
+        <a href="faq/faq.php">FAQ</a>
+        <a href="about/contact.php">Contact</a>
     </div>
 
-<!-- Body -->
+    <!-- Body -->
     <div class="image-container">
         <img src="img/mobil jajar.jpg" alt="Deskripsi Proyek" class="img-fluid" />
 
@@ -49,7 +50,7 @@
                 Selamat datang di Oto Track, penyedia solusi transportasi terdepan Anda. Berkomitmen untuk menyediakan pilihan kendaraan yang lengkap dan layanan berkualitas, Oto Track adalah mitra tepercaya untuk semua kebutuhan sewa mobil Anda, baik untuk keperluan
                 pribadi, bisnis, maupun acara khusus.
             </h5>
-            <a href="#produk" class="product-button">Daftar Produk Saya</a>
+            <a href="#produk" class="product-button">Daftar Produk Kami</a>
         </div>
     </div>
     
@@ -76,7 +77,7 @@
                 <h5>•24 jam: Rp 400.000</h5>
             </div>
             <div class="product-item">
-                <img src="img/Calya Manual.webp" alt="Mobil 4" class="product-image" />
+                <img src="img /Calya Manual.webp" alt="Mobil 4" class="product-image" />
                 <h3>Calya Manual</h3>
                 <h5>•12 jam: Rp 300.000</h5>
                 <h5>•24 jam: Rp 400.000</h5>
@@ -96,16 +97,14 @@
         </div>
     </div>
 
-        <p>&copy; 2023 OTO TRACK. All Rights Reserved.</p>
+    <p>&copy; 2023 OTO TRACK. All Rights Reserved.</p>
 
     <!-- Footer -->
     <footer id="foot">
-
         <a class="whatsapp-button" href="https://wa.me/6281511208316">
-            <i class="fab fa-whatsapp">
-            </i>
+            <i class="fab fa-whatsapp"></i>
             Hubungi Kami
-           </a>
+        </a>
     </footer>
     <script>
         // Menampilkan nama pengguna jika sudah login
