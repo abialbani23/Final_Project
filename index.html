@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OTO TRACK</title>
     <link rel="icon" type="image/png" href="img/oto track.png" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -15,23 +15,38 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">
             <img src="img/Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
         </a>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.php">Home</a>
-            <a class="nav-item nav-link" href="about/about.php">About</a>
-            <a class="nav-item nav-link" href="user/search.php">Search</a>
-            <a class="nav-item nav-link" href="faq/faq.php">FAQ</a>
-            <a class="nav-item nav-link" href="about/contact.php">Contact</a>
-        </div>
-        <div class="login-container">
-            <a href="auth/login.php" class="login-button" id="loginButton">Login</a>
-            <div id="userContainer" style="display: none;">
-                <div class="profile-icon" id="profileIcon"></div>
-                <span id="username" style="cursor: pointer;"></span>
-                <a href="#" class="btn btn-danger btn-sm logout-button" id="logoutButton">Logout</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about/about.php">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user/search.php">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq/faq.php">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about/contact.php">Contact</a>
+                </li>
+            </ul>
+            <div class="login-container">
+                <a href="auth/login.php" class="btn btn-outline-primary" id="loginButton">Login</a>
+                <div id="userContainer" style="display: none;" class="ml-2">
+                    <div class="profile-icon" id="profileIcon"></div>
+                    <span id="username" style="cursor: pointer;"></span>
+                    <a href="#" class="btn btn-danger btn-sm logout-button" id="logoutButton">Logout</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -64,7 +79,7 @@
                 <h5>•12 jam: Rp 250.000</h5>
                 <h5>•24 jam: Rp 350.000</h5>
             </div>
-            <div class="product-item">
+            <div class=" product-item">
                 <img src="img/New Agya Matic.webp" alt="Mobil 3" class="product-image" />
                 <h3>New Agya Matic</h3>
                 <h5>•12 jam: Rp 300.000</h5>
