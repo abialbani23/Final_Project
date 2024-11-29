@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OTO TRACK</title>
     <link rel="icon" type="image/png" href="img/oto track.png" />
-    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -16,12 +16,18 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light">
-        <button class="openbtn" data-toggle="modal" data-target="#offCanvasMenu">☰ Menu</button>
         <a class="navbar-brand" href="index.php">
             <img src="img/Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
         </a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.php">Home</a>
+            <a class="nav-item nav-link" href="about/about.php">About</a>
+            <a class="nav-item nav-link" href="user/search.php">Search</a>
+            <a class="nav-item nav-link" href="faq/faq.php">FAQ</a>
+            <a class="nav-item nav-link" href="about/contact.php">Contact</a>
+        </div>
         <div class="login-container">
-            <a href="login.html" class="login-button" id="loginButton">Login</a>
+            <a href="auth/login.php" class="login-button" id="loginButton">Login</a>
             <div id="userContainer" style="display: none;">
                 <div class="profile-icon" id="profileIcon"></div>
                 <span id="username" style="cursor: pointer;"></span>
@@ -29,27 +35,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Off-Canvas Menu -->
-    <div class="modal fade" id="offCanvasMenu" tabindex="-1" role="dialog" aria-labelledby="offCanvasMenuLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="offCanvasMenuLabel">Menu</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <a href="index.php">Home</a><br>
-                    <a href="about/about.php">About</a><br>
-                    <a href="user/search.php">Search</a><br>
-                    <a href="faq/faq.php">FAQ</a><br>
-                    <a href="about/contact.php">Contact</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Body -->
     <div class="image-container">
@@ -68,7 +53,7 @@
         <h2>Daftar Produk Kami</h2>
         <div class="product-container">
             <div class="product-item">
-                <img src="img/avanza.webp" alt="Mobil 1" class=" product-image" />
+                <img src="img/avanza.webp" alt="Mobil 1" class="product-image" />
                 <h3>Avanza</h3>
                 <h5>•12 jam: Rp 300.000</h5>
                 <h5>•24 jam: Rp 400.000</h5>
