@@ -1,5 +1,12 @@
 .navbar {
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px; /* Menetapkan tinggi navbar */
+    background-color: #f8f9fa; /* Warna latar belakang navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk navbar */
 }
 
 .navbar-brand {
@@ -57,11 +64,12 @@
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Tambahkan transisi untuk efek hover */
 }
 
 .product-button:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Efek zoom saat hover */
 }
 
 .product-list {
@@ -81,6 +89,11 @@
     border-radius: 5px;
     overflow: hidden;
     width: 300px;
+    transition: transform 0.3s; /* Transisi untuk efek hover */
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Efek zoom pada item produk saat hover */
 }
 
 .product-image {
@@ -129,38 +142,77 @@
     width: 100%;
 }
 
-.sidebar {
-    height: 100%;
-    width: 250px; /* Lebar sidebar */
-    position: fixed;
-    top: 0;
-    left: -250px; /* Menyembunyikan sidebar di luar layar */
-    background-color: #f8f9fa; /* Warna latar belakang */
-    overflow-x: hidden;
-    transition: 0.5s; /* Animasi untuk transisi */
-    padding-top: 60px; /* Jarak dari atas */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Bayangan */
-    z-index: 1; /* Pastikan sidebar berada di atas konten */
+/* Gaya untuk Off-Canvas Menu */
+.modal-content {
+    border-radius: 5px; /* Sudut melengkung pada modal */
 }
 
-.sidebar a {
-    padding: 15px 20px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #333;
-    display: block;
-    transition: 0.3s;
+.modal-header {
+    background-color: #007bff; /* Warna latar belakang header modal */
+    color: white; /* Warna teks header modal */
 }
 
-.sidebar a:hover {
+.modal-body {
+    background-color: #f8f9fa; /* Warna latar belakang body modal */
+}
+
+.modal-body a {
+    display: block; /* Menampilkan link dalam bentuk blok */
+    padding: 10px; /* Memberikan padding pada link */
+    color: #333; /* Warna teks link */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+    transition: background-color 0.3s; /* Transisi untuk efek hover */
+}
+
+.modal-body a:hover {
     background-color: #ddd; /* Warna latar belakang saat hover */
 }
 
+/* Gaya untuk tombol buka menu */
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: #f8f9fa; /* Warna tombol */
+    background-color: # f8f9fa; /* Warna tombol */
     border: none;
     padding: 10px 15px;
     margin-left: 10px;
+    border-radius: 5px; /* Sudut melengkung pada tombol */
+    transition: background-color 0.3s; /* Transisi untuk efek hover */
+}
+
+.openbtn:hover {
+    background-color: #e2e6ea; /* Warna latar belakang saat hover */
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        top: 60px; /* Pastikan di bawah navbar */
+        width: 250px; /* Lebar sidebar */
+        height: calc(100% - 60px); /* Mengurangi tinggi sidebar sesuai tinggi navbar */
+        left: -250px; /* Menyembunyikan sidebar di luar layar */
+        background-color: #f8f9fa; /* Warna latar belakang */
+        overflow-x: hidden;
+        transition: 0.5s; /* Animasi untuk transisi */
+        padding-top: 0; /* Menghapus padding-top */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Bayangan */
+        z-index: 1; /* Pastikan sidebar berada di atas konten */
+    }
+    
+    .sidebar.open {
+        left: 0; /* Menampilkan sidebar saat terbuka */
+    }
+    
+    .sidebar a {
+        padding: 15px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #333;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+        background-color: #ddd; /* Warna latar belakang saat hover */
+    }
 }
