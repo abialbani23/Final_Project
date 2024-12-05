@@ -133,7 +133,7 @@
     <div class="header">
     <img src="../img/Logo_Web-removebg-preview.png" alt="Logo" class="logo" />
         <nav>
-            <a href="../index.php">Home</a>
+            <a href="../index.html">Home</a>
             <a href="contact.php">About Us</a>
             <a href="../user/search.php">Our Cars &amp; Price List</a>
             <a href="../faq/faq.php">News &amp; Info</a>

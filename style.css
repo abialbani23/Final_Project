@@ -1,218 +1,185 @@
+/* Gaya Umum */
+body {
+    font-family: 'Arial', sans-serif; /* Mengatur font umum */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Warna latar belakang umum */
+    line-height: 1.6; /* Meningkatkan keterbacaan */
+}
+
+/* Gaya Kontainer Gambar */
+.image-container {
+    position: relative; /* Mengatur posisi relatif untuk menempatkan teks di atas gambar */
+    width: 100%; /* Lebar penuh */
+    max-width: 600px; /* Maksimal lebar kontainer */
+    margin: 20px auto; /* Margin otomatis untuk pusat */
+    overflow: hidden; /* Menyembunyikan bagian yang melampaui batas */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan untuk kedalaman */
+}
+
+/* Gaya Gambar */
+.image-container img {
+    width: 100%; /* Gambar responsif */
+    height: auto; /* Menjaga rasio aspek */
+}
+
+/* Gaya Overlay Teks */
+.text-overlay {
+    position: absolute; /* Posisi absolut untuk menempatkan teks di atas gambar */
+    top: 50%; /* Menempatkan di tengah vertikal */
+    left: 50%; /* Menempatkan di tengah horizontal */
+    transform: translate(-50%, -50%); /* Menggeser teks ke tengah */
+    color: white; /* Warna teks */
+    text-align: center; /* Pusatkan teks */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    padding: 20px; /* Padding untuk ruang di sekitar teks */
+    border-radius: 8px; /* Sudut melengkung */
+    font-size: 24px; /* Ukuran font */
+    font-weight: bold; /* Menebalkan teks */
+}
+
+/* Gaya Navbar */
 .navbar {
     padding: 10px 20px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 60px; /* Menetapkan tinggi navbar */
-    background-color: #f8f9fa; /* Warna latar belakang navbar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk navbar */
+    height: 60px; 
+    background-color: #ffffff; /* Mengubah warna latar belakang navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih dalam untuk navbar */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transisi saat menggulir */
 }
 
-.navbar-brand {
-    margin-right: auto;
-    padding-left: 20px;
+.navbar:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam saat hover */
 }
 
-.menu-container {
-    display: flex;
-    justify-content: flex-start;
-    flex-grow: 1;
-    margin-left: 20px;
-}
-
-.menu {
-    display: flex;
-}
-
+/* Gaya Tautan Navbar */
 .nav-link {
     margin-right: 15px;
     color: #007bff;
+    font-weight: bold; /* Menebalkan teks tautan */
+    transition: color 0.3s, transform 0.3s; /* Transisi saat hover */
 }
 
 .nav-link:hover {
     color: #0056b3;
+    text-decoration: underline; /* Garis bawah saat hover */
+    transform: scale(1.1); /* Efek zoom saat hover */
 }
 
-.image-container {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    max-width: 1200px;
-    max-height: 300px;
-}
-
-.centered-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
-
+/* Gaya Tombol Produk */
 .product-button {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px; /* Meningkatkan padding */
+    font-size: 18px; /* Meningkatkan ukuran font */
     color: white;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s; /* Tambahkan transisi untuk efek hover */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Tambahkan transisi untuk efek hover */
+    cursor: pointer; /* Menunjukkan bahwa ini adalah tombol */
 }
 
 .product-button:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Efek zoom saat hover */
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
 }
 
-.product-list {
-    text-align: center;
-    padding: 20px;
-}
-
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
+/* Gaya Item Produk */
 .product-item {
     margin: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px; /* Sudut lebih melengkung */
     overflow: hidden;
     width: 300px;
-    transition: transform 0.3s; /* Transisi untuk efek hover */
+ transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
+    background-color: #ffffff; /* Warna latar belakang item produk */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan item produk */
 }
 
 .product-item:hover {
-    transform: scale(1.05); /* Efek zoom pada item produk saat hover */
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
 }
 
-.product-image {
-    width: 100%;
-    height: auto;
-}
-
-.product-item h3 {
-    margin: 10px 0;
-}
-
-.product-item p {
-    padding: 0 10px 10px;
-}
-
-.logo {
-    width: 150px;
-    height: auto;
-}
-
-.login-container {
-    margin-left: auto;
-}
-
-.login-button {
-    color: white;
-    background-color: #007bff;
-    text-decoration: none;
-    padding: 6px 11px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.login-button:hover {
-    background-color: #0056b3;
-}
-
+/* Gaya Footer */
 #foot {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
+    padding: 15px 0; /* Meningkatkan padding */
+    font-size: 16px; /* Meningkatkan ukuran font */
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Bayangan atas footer */
 }
 
-/* Gaya untuk Off-Canvas Menu */
-.modal-content {
-    border-radius: 5px; /* Sudut melengkung pada modal */
-}
-
+/* Gaya Modal */
 .modal-header {
-    background-color: #007bff; /* Warna latar belakang header modal */
-    color: white; /* Warna teks header modal */
+    background-color: #007bff; 
+    color: white; 
+    padding: 15px; /* Meningkatkan padding */
+    border-bottom: 2px solid #0056b3; /* Garis bawah */
+    font-size: 20px; /* Ukuran font lebih besar untuk header modal */
 }
 
-.modal-body {
-    background-color: #f8f9fa; /* Warna latar belakang body modal */
+/* Gaya Sidebar */
+.sidebar {
+    position: absolute;
+    top: 60px; 
+    width: 250px; 
+    height: calc(100% - 60px); 
+    left: -250px; 
+    background-color: #f8f9fa; overflow-x: hidden;
+    transition: 0.5s; 
+    padding-top: 0; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
 }
 
-.modal-body a {
-    display: block; /* Menampilkan link dalam bentuk blok */
-    padding: 10px; /* Memberikan padding pada link */
-    color: #333; /* Warna teks link */
-    text-decoration: none; /* Menghapus garis bawah pada link */
-    transition: background-color 0.3s; /* Transisi untuk efek hover */
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid #ddd; /* Garis pemisah antar tautan */
 }
 
-.modal-body a:hover {
-    background-color: #ddd; /* Warna latar belakang saat hover */
+.sidebar a:hover {
+    background-color: #ddd; 
+    color: #007bff; /* Mengubah warna teks saat hover */
+    font-weight: bold; /* Menebalkan teks saat hover */
 }
 
-/* Gaya untuk tombol buka menu */
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: # f8f9fa; /* Warna tombol */
-    border: none;
-    padding: 10px 15px;
-    margin-left: 10px;
-    border-radius: 5px; /* Sudut melengkung pada tombol */
-    transition: background-color 0.3s; /* Transisi untuk efek hover */
-}
-
-.openbtn:hover {
-    background-color: #e2e6ea; /* Warna latar belakang saat hover */
-}
-
+/* Gaya Responsif */
 @media (max-width: 768px) {
-    .sidebar {
-        position: absolute;
-        top: 60px; /* Pastikan di bawah navbar */
-        width: 250px; /* Lebar sidebar */
-        height: calc(100% - 60px); /* Mengurangi tinggi sidebar sesuai tinggi navbar */
-        left: -250px; /* Menyembunyikan sidebar di luar layar */
-        background-color: #f8f9fa; /* Warna latar belakang */
-        overflow-x: hidden;
-        transition: 0.5s; /* Animasi untuk transisi */
-        padding-top: 0; /* Menghapus padding-top */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Bayangan */
-        z-index: 1; /* Pastikan sidebar berada di atas konten */
-    }
-    
-    .sidebar.open {
-        left: 0; /* Menampilkan sidebar saat terbuka */
-    }
-    
-    .sidebar a {
-        padding: 15px 20px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #333;
-        display: block;
-        transition: 0.3s;
+    .navbar {
+        flex-direction: column; 
     }
 
-    .sidebar a:hover {
-        background-color: #ddd; /* Warna latar belakang saat hover */
+    .product-container {
+        flex-direction: column; 
+    }
+
+    .product-item {
+        width: 90%; 
+    }
+
+    .sidebar {
+        width: 100%; /* Mengubah lebar sidebar di perangkat kecil */
+        left: -100%; /* Menyembunyikan sidebar di luar layar */
+    }
+
+    .sidebar.open {
+        left: 0; 
     }
 }
